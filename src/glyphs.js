@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Svg, { Rect, Path, G, ClipPath, Text, Defs, LinearGradient, Stop } from "react-native-svg";
 export default {
   '3d': (
     <Path
