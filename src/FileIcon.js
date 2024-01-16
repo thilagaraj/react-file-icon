@@ -87,15 +87,15 @@ export const FileIcon = ({
   const UNIQUE_ID = uniqueId();
 
   return (
-    <svg
+    <Svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={`0 0 ${VIEWBOX.WIDTH} ${VIEWBOX.HEIGHT}`}
       width="100%"
       style={{ maxWidth: '100%' }}
     >
-      <defs>
-        <clipPath id={`pageRadius${UNIQUE_ID}`}>
-          <rect
+      <Defs>
+        <ClipPath id={`pageRadius${UNIQUE_ID}`}>
+          <Rect
             x={ICON.X_OFFSET}
             y="0"
             rx={radius}
@@ -103,34 +103,34 @@ export const FileIcon = ({
             width={ICON.WIDTH}
             height={ICON.HEIGHT}
           />
-        </clipPath>
+        </ClipPath>
 
-        <clipPath id={`foldCrop${UNIQUE_ID}`}>
-          <rect
+        <ClipPath id={`foldCrop${UNIQUE_ID}`}>
+          <Rect
             width={ICON.WIDTH}
             height={FOLD.HEIGHT}
             transform={`rotate(-45 0 ${FOLD.HEIGHT})`}
           />
         </clipPath>
-        <linearGradient
+        <LinearGradient
           x1="100%"
           y1="0%"
           y2="100%"
           id={`pageGradient${UNIQUE_ID}`}
         >
-          <stop
+          <Dtop
             stopColor={gradientColor}
             stopOpacity={gradientOpacity}
             offset="0%"
           />
-          <stop stopColor={gradientColor} stopOpacity="0" offset="66.67%" />
-        </linearGradient>
-      </defs>
+          <Dtop stopColor={gradientColor} stopOpacity="0" offset="66.67%" />
+        </LinearGradient>
+      </Defs>
 
-      <g id="file" clipPath={`url(#pageRadius${UNIQUE_ID})`}>
+      <G id="file" clipPath={`url(#pageRadius${UNIQUE_ID})`}>
         {fold ? (
           <React.Fragment>
-            <path
+            <Path
               d={`M${ICON.X_OFFSET} 0 h ${ICON.WIDTH - FOLD.HEIGHT} L ${
                 ICON.WIDTH + ICON.X_OFFSET
               } ${FOLD.HEIGHT} v ${ICON.HEIGHT - FOLD.HEIGHT} H ${
@@ -138,7 +138,7 @@ export const FileIcon = ({
               } Z`}
               fill={color}
             />
-            <path
+            <Path
               d={`M${ICON.X_OFFSET} 0 h ${ICON.WIDTH - FOLD.HEIGHT} L ${
                 ICON.WIDTH + ICON.X_OFFSET
               } ${FOLD.HEIGHT} v ${ICON.HEIGHT - FOLD.HEIGHT} H ${
@@ -149,14 +149,14 @@ export const FileIcon = ({
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <rect
+            <Rect
               x={ICON.X_OFFSET}
               y="0"
               width={ICON.WIDTH}
               height={ICON.HEIGHT}
               fill={color}
             />
-            <rect
+            <Rect
               x={ICON.X_OFFSET}
               y="0"
               width={ICON.WIDTH}
@@ -165,11 +165,11 @@ export const FileIcon = ({
             />
           </React.Fragment>
         )}
-      </g>
+      </G>
 
       {fold && (
-        <g transform={`translate(28 ${FOLD.HEIGHT}) rotate(-90)`}>
-          <rect
+        <G transform={`translate(28 ${FOLD.HEIGHT}) rotate(-90)`}>
+          <Rect
             width={ICON.WIDTH}
             height={ICON.HEIGHT}
             fill={foldColor || colord(color).darken(0.1).toHex()}
@@ -177,13 +177,13 @@ export const FileIcon = ({
             ry={radius}
             clipPath={`url(#foldCrop${UNIQUE_ID})`}
           />
-        </g>
+        </G>
       )}
 
       {extension && (
         <React.Fragment>
-          <g id={`label${UNIQUE_ID}`}>
-            <rect
+          <G id={`label${UNIQUE_ID}`}>
+            <Rect
               fill={labelColor || colord(color).darken(0.3).toHex()}
               x={ICON.X_OFFSET}
               y={ICON.HEIGHT - LABEL_HEIGHT}
@@ -191,12 +191,12 @@ export const FileIcon = ({
               height={LABEL_HEIGHT}
               clipPath={`url(#pageRadius${UNIQUE_ID})`}
             />
-          </g>
-          <g
+          </G>
+          <G
             id={`labelText${UNIQUE_ID}`}
             transform={`translate(${ICON.X_OFFSET} 34)`}
           >
-            <text
+            <Text
               x={ICON.WIDTH / 2}
               y="10"
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
@@ -212,20 +212,20 @@ export const FileIcon = ({
               }}
             >
               {extension}
-            </text>
-          </g>
+            </Text>
+          </G>
         </React.Fragment>
       )}
 
       {type && (
-        <g
+        <G
           transform={`translate(-4 ${!extension ? 6 : 0})`}
           fill={glyphColor || colord(color).darken(0.15).toHex()}
         >
           {glyphs[type]}
-        </g>
+        </G>
       )}
-    </svg>
+    </Svg>
   );
 };
 
