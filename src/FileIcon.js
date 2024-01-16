@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { colord, extend as extendColord } from 'colord';
 import namesPlugin from 'colord/plugins/names';
 import uniqueId from 'lodash.uniqueid';
+import Svg, { Rect, Path, G, ClipPath, Text, Defs, LinearGradient, Stop } from "react-native-svg";
 
 import glyphs from './glyphs';
 
