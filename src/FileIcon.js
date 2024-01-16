@@ -111,19 +111,19 @@ export const FileIcon = ({
             height={FOLD.HEIGHT}
             transform={`rotate(-45 0 ${FOLD.HEIGHT})`}
           />
-        </clipPath>
+        </ClipPath>
         <LinearGradient
           x1="100%"
           y1="0%"
           y2="100%"
           id={`pageGradient${UNIQUE_ID}`}
         >
-          <Dtop
+          <Stop
             stopColor={gradientColor}
             stopOpacity={gradientOpacity}
             offset="0%"
           />
-          <Dtop stopColor={gradientColor} stopOpacity="0" offset="66.67%" />
+          <Stop stopColor={gradientColor} stopOpacity="0" offset="66.67%" />
         </LinearGradient>
       </Defs>
 
