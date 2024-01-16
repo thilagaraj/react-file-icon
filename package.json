@@ -6,8 +6,8 @@
     "url": "https://github.com/corygibbons/react-file-icon"
   },
   "source": "src/index.js",
-  "main": "dist/react-file-icon.js",
-  "module": "dist/react-file-icon.esm.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "microbundle --jsx React.createElement --no-sourcemap --no-compress",
     "watch": "microbundle --jsx React.createElement --no-compress --watch",
