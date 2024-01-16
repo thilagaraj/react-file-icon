@@ -7,12 +7,7 @@
   },
   "source": "src/index.js",
   "main": "src/index.js",
-  "module": "src/index.js",
-  "scripts": {
-    "build": "microbundle --jsx React.createElement --no-sourcemap --no-compress",
-    "watch": "microbundle --jsx React.createElement --no-compress --watch",
-    "test": "jest --config config/jest.config.js"
-  },
+  "module": "src/index.js", 
   "keywords": [
     "react",
     "component",
